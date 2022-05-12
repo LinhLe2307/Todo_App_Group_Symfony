@@ -19,9 +19,9 @@ TODO application does the basic operations: creating a task, reading tasks list,
 
 5. Afterwards you can run webpack encore using following command
    `npm run watch`
-6. Start Symfony server: `symfony server:start`
+6. Start Docker container SYMFONY-MAMP
 7. Visit URL: http://localhost:8007/ to run the app
-8. Use Crtl + C to stop the server and to stop the watch
+8. Use Crtl + C to stop to stop the watch
 
 # Tech stack
 
