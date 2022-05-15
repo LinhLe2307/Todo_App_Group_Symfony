@@ -11,9 +11,14 @@
 <div class="example-wrapper">
     <h1>ToDO List</h1>
 
+    <form action="{{path('create_task')}}" method="POST">
+        <input type="text" name="title" placeholder="Task title">
+        <button type="submit">Add a task</button>
+    </form>
+
     <ul>
     {% for task in tasks %}
-        <li>
+        <li {% if task.status %} class="checked" {% endif %}>
             <span class="task-list-item">{{task.title}}</span> 
         </li>
     {% endfor %}
