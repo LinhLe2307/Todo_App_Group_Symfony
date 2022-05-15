@@ -37,4 +37,24 @@ class CRUDController extends AbstractController
             return $this->redirectToRoute('app_homepage');
         }
     }
+
+    #[Route('/update/{id}', name: 'update_task')]
+    public function update($id, ManagerRegistry $doctrine): Response
+    {
+        $entityManager = $doctrine->getManager();
+        $todo = $entityManager->getRepository(TodoList::class)->find($id);
+        $todo->setStatus(!$todo->getStatus());
+        $entityManager->flush();
+        return $this->redirectToRoute('app_homepage');
+    }
+
+    #[Route('/delete/{id}', name: 'delete_task')]
+    public function delete($id, ManagerRegistry $doctrine): Response
+    {
+        $entityManager = $doctrine->getManager();
+        $id = $entityManager->getRepository(TodoList::class)->find($id);
+        $entityManager->remove($id);
+        $entityManager->flush();
+        return $this->redirectToRoute('app_homepage');
+    }
 }

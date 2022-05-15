@@ -17,9 +17,10 @@
     </form>
 
     <ul>
-    {% for task in tasks %}
-        <li {% if task.status %} class="checked" {% endif %}>
-            <span class="task-list-item">{{task.title}}</span> 
+    {% for todo in tasks %}
+        <li {% if todo.status %} class="checked" {% endif %}>
+           <a href="{{path('update_task', {'id': todo.id})}}"><span class="task-list-item">{{todo.title}}</span></a>
+           <a onclick="return confirm('Please confirm deletion')" href="{{path('delete_task', {'id': todo.id})}}"><span class="close">X</span></a>
         </li>
     {% endfor %}
     </ul>
