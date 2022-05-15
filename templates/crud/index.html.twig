@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CRUDController!{% endblock %}
+{% block title %}ToDo List{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,14 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>ToDO List</h1>
 
-    This friendly message is coming from:
     <ul>
-        <li>Your controller at <code><a href="{{ '/Users/s2200109/Desktop/Desktop/symfony/Symfony-MAMP/web/src/Controller/CRUDController.php'|file_link(0) }}">src/Controller/CRUDController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/s2200109/Desktop/Desktop/symfony/Symfony-MAMP/web/templates/crud/index.html.twig'|file_link(0) }}">templates/crud/index.html.twig</a></code></li>
+    {% for task in tasks %}
+        <li>
+            <span class="task-list-item">{{task.title}}</span> 
+        </li>
+    {% endfor %}
     </ul>
 </div>
 {% endblock %}
