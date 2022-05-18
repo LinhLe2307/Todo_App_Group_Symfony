@@ -32,7 +32,7 @@ class CRUDController extends AbstractController
             $todo->setTitle($title);
             $entityManager->persist($todo);
             $entityManager->flush();
-            return new Response("task added");
+            return $this->redirectToRoute('app_homepage');
         } else {
             return $this->redirectToRoute('app_homepage');
         }
