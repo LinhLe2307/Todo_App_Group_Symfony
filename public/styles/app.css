@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;900&display=swap');
 /* Include the padding and border in an element's total width and height */
 * {
   box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Remove margins and padding from the list */
@@ -16,12 +22,14 @@ ul li {
   position: relative;
   padding: 12px 8px 12px 40px;
   background: #eee;
-  font-size: 18px;
-  transition: 0.2s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+ul li a {
+  text-decoration: none;
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
@@ -42,7 +50,7 @@ ul li.checked {
 
 /* Add a "checked" mark when clicked on */
 ul li.checked::before {
-  content: "";
+  content: '';
   position: absolute;
   border-color: green;
   border-style: solid;
@@ -57,6 +65,7 @@ ul li.checked::before {
 /* Style the close button */
 .close {
   position: absolute;
+  color: gray;
   right: 0;
   top: 0;
   padding: 12px 16px 12px 16px;
@@ -77,7 +86,7 @@ ul li.checked::before {
 
 /* Clear floats after the header */
 .header:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -103,7 +112,7 @@ input {
   text-align: center;
   font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
+  /* transition: 0.3s; */
   border-radius: 0;
   border: none;
 }
