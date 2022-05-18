@@ -41,14 +41,14 @@ class CRUDController extends AbstractController
     #[Route('/update/{id}', name: 'update_task')]
     public function update($id, ManagerRegistry $doctrine): Response
     {
-        $entityManager = $doctrine->getManager();
-        $todo = $entityManager->getRepository(TodoList::class)->find($id);
-        $todo->setStatus(!$todo->getStatus());
-        $entityManager->flush();
-        return $this->redirectToRoute('app_homepage');
+        $entityManager = $doctrine->getManager(); // saving in the database
+        $todo = $entityManager->getRepository(TodoList::class)->find($id); //find a specific record by id from the database 
+        $todo->setStatus(!$todo->getStatus()); //
+        $entityManager->flush(); // save a todo in the db by flush method
+        return $this->redirectToRoute('app_homepage'); //redirect to the homepage
     }
 
-    #[Route('/delete/{id}', name: 'delete_task')]
+    #[Route('/delete/{id}', name: 'delete_task', methods: ['DELETE'])]
     public function delete($id, ManagerRegistry $doctrine): Response
     {
         $entityManager = $doctrine->getManager();
