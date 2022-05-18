@@ -3,29 +3,14 @@
 {% block title %}ToDo List{% endblock %}
 
 {% block body %}
-<<<<<<< HEAD
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-  <div class="header">
-=======
     <div class="header">
->>>>>>> c4b0ae30812319474e59f999460a72583c4f9437
     <h1>ToDO List</h1>
 
     <form action="{{path('create_task')}}" method="POST">
         <input type="text" name="title" placeholder="Task title">
         <button type="submit" class="addBtn">Add a task</button>
     </form>
-<<<<<<< HEAD
- </div>
-=======
     </div>
-
->>>>>>> c4b0ae30812319474e59f999460a72583c4f9437
     <ul>
     {% for todo in tasks %}
         <li {% if todo.status %} class="checked" {% endif %}>
