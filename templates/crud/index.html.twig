@@ -9,13 +9,14 @@
 </style>
 
 <div class="example-wrapper">
+  <div class="header">
     <h1>ToDO List</h1>
 
     <form action="{{path('create_task')}}" method="POST">
         <input type="text" name="title" placeholder="Task title">
-        <button type="submit">Add a task</button>
+        <button type="submit" class="addBtn">Add a task</button>
     </form>
-
+ </div>
     <ul>
     {% for todo in tasks %}
         <li {% if todo.status %} class="checked" {% endif %}>
