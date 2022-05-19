@@ -48,7 +48,7 @@ class CRUDController extends AbstractController
         return $this->redirectToRoute('app_homepage'); //redirect to the homepage
     }
 
-    #[Route('/delete/{id}', name: 'delete_task', methods: ['DELETE'])]
+    #[Route('/delete/{id}', name: 'delete_task')]
     public function delete($id, ManagerRegistry $doctrine): Response
     {
         $entityManager = $doctrine->getManager();
